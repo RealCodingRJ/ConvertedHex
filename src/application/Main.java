@@ -8,23 +8,21 @@ final public class Main {
 
         for (final var s : Arrays.stream(args).toList()) {
 
-            if (s.isEmpty()) {
+            switch (s) {
+                
+                case "" -> System.out.println("Empty...");
+                case "--Hex" -> {
 
-                System.out.println("Empty...");
-            }
+                    String parsedInteger = Integer.toHexString(s.charAt(1));
+                    System.out.println(parsedInteger);
 
-            else if (s.equals("--Hex")) {
+                }
+                case "--Dec" -> {
 
-                String parsedInteger = Integer.toHexString(s.charAt(1));
-                System.out.println(parsedInteger);
+                    int parsedInteger = Integer.parseInt(String.valueOf(s.charAt(2)));
+                    System.out.println(parsedInteger);
 
-            }
-
-            else if (s.equals("--Dec")) {
-
-                int parsedInteger = Integer.parseInt(String.valueOf(s.charAt(2)));
-                System.out.println(parsedInteger);
-
+                }
             }
 
 
